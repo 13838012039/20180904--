@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='./js/jquery-3.3.1.js'></script>
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .red {
+        width: 100vw;
+        height: 100vw;
+    }
+    
+    .red.active {
+        background: red;
+    }
+    
+    .blue.active {
+        background: blue;
+    }
+    
+    .green.active {
+        background: green;
+    }
+    
+    .yellow.active {
+        background: yellow;
+    }
+    
+    .orange.active {
+        background: orange;
+    }
+    
+    .purple.active {
+        background: purple;
+    }
+    
+    .skyblue.active {
+        background: skyblue;
+    }
+    
+    div {
+        padding: 10px;
+        border: 1px solid black;
+        transition: all 0.5s;
+        display: flex;
+        flex: 1;
+        border-radius: 50%;
+    }
+</style>
+
+<body>
+    <div class='red'>
+        <div class='orange'>
+            <div class='yellow'>
+                <div class='green'>
+                    <div class='skyblue'>
+                        <div class='blue'>
+                            <div class='purple'>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var n = 0;
+    $('div').on('click', function(e) {
+        setTimeout(function() {
+            $(e.currentTarget).addClass('active')
+        }, n * 500)
+        n++
+    })
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='./js/jquery-3.3.1.js'></script>
+    <title>jq-浮层</title>
+
+    <style>
+        .wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .popover {
+            border: 1px solid red;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            white-space: nowrap;
+            padding: 10px;
+            display: none;
+        }
+        
+        .popover::before {
+            content: '';
+            position: absolute;
+            right: 100%;
+            top: 5px;
+            border: 10px solid transparent;
+            border-right-color: red;
+        }
+        
+        .popover::after {
+            content: '';
+            position: absolute;
+            right: 100%;
+            top: 5px;
+            border: 10px solid transparent;
+            border-right-color: white;
+            margin-right: -1px;
+        }
+        
+        body {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div id='wrapper' class='wrapper'>
+        <button id='clickMe'>点我</button>
+        <div id="popover" class="popover">
+            <input type="checkbox"> 浮层
+        </div>
+    </div>
+</body>
+
+
+<script>
+    $(clickMe).on('click', function() {
+            $(popover).show()
+            console.log('show')
+            setTimeout(function() {
+                console.log('添加one click')
+                $(document).one('click', function() {
+                    console.log('hide')
+                    $(popover).hide()
+
+                })
+            }, 0)
+
+        })
+        // $(document).on('click', function() {
+        //         console.log('click事件走到了document')
+        //     })
+    $(wrapper).on('click', function(e) {
+        e.stopPropagation()
+    })
+</script>
+
+</html>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--1111111111111111 <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>浮层</title>
+
+
+    <style>
+        .wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .popover {
+            border: 1px solid red;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            white-space: nowrap;
+            padding: 10px;
+            display: none;
+        }
+        
+        .popover::before {
+            content: '';
+            position: absolute;
+            right: 100%;
+            top: 5px;
+            border: 10px solid transparent;
+            border-right-color: red;
+        }
+        
+        .popover::after {
+            content: '';
+            position: absolute;
+            right: 100%;
+            top: 5px;
+            border: 10px solid transparent;
+            border-right-color: white;
+            margin-right: -1px;
+        }
+        
+        body {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div id='wrapper' class='wrapper'>
+        <button id='clickMe'>点我</button>
+        <div id="popover" class="popover">
+            浮层
+        </div>
+    </div>
+</body>
+
+
+<script>
+    clickMe.addEventListener('click', function(e) {
+        popover.style.display = 'block'
+        console.log('block')
+        e.stopPropagation()
+    })
+    wrapper.addEventListener('click', function(e) {
+        e.stopPropagation()
+    })
+
+    document.addEventListener('click', function() {
+        popover.style.display = 'none'
+        console.log('none')
+
+    })
+</script>
+
+</html> -->
